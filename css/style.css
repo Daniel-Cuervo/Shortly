@@ -7,6 +7,7 @@
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
   --white: #fff;
+  --color-error: #e2696d;
   --font-primary: "Poppins", sans-serif;
 }
 
@@ -24,9 +25,16 @@ ul {
   padding: 0;
 }
 
+button,
+button:hover {
+  transition: all 0.5s ease;
+}
+
 .wrapper {
   padding: 0 1.38rem;
 }
+
+/* ----------------------------------- Header ----------------------------------- */
 
 .header {
   width: 100%;
@@ -34,7 +42,6 @@ ul {
   position: sticky;
   top: 0;
   z-index: 1;
-  /* margin-top: 1.94rem; */
   padding: 20px 0;
   background-color: var(--white);
 }
@@ -108,6 +115,12 @@ ul {
   cursor: pointer;
 }
 
+.header__menu .header__login :nth-child(2):hover {
+  background-color: #9be2e1;
+}
+
+/* ----------------------------------- Description ----------------------------------- */
+
 .description {
   margin-bottom: 45px;
 }
@@ -152,10 +165,16 @@ ul {
   cursor: pointer;
 }
 
+.description .container-explanation button:hover {
+  background-color: #9be2e1;
+}
+
 .description .container-explanation button > a {
   color: var(--white);
   font-weight: 700;
 }
+
+/* ----------------------------------- Shorten Link ----------------------------------- */
 
 .container-shorten-link {
   width: 100%;
@@ -203,6 +222,93 @@ ul {
   font-size: 0.95em;
   cursor: pointer;
 }
+
+.container-shorten-link button:hover {
+  background-color: #9be2e1;
+}
+
+.container-shorten-link input.error {
+  box-shadow: 0px 0px 0px 3px var(--color-error);
+  margin-bottom: 5px;
+}
+
+.container-shorten-link input.error::placeholder {
+  color: #e4bebe;
+  /* font-weight: 700; */
+}
+
+.container-shorten-link .message {
+  display: none;
+}
+
+.container-shorten-link .message.error {
+  display: block;
+  margin: 10px 0 15px 0;
+  font-size: 0.66em;
+  color: var(--color-error);
+  font-style: italic;
+}
+
+/* ----------------------------------- Links ----------------------------------- */
+.container-links {
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+.container-links .link {
+  background-color: var(--white);
+  text-align: left;
+  font-size: 0.88em;
+  margin-top: -50px;
+  margin-bottom: 80px;
+  border-radius: 7px;
+}
+
+.container-links .wrapper div {
+  padding: 20px;
+}
+
+.container-links :first-child > p {
+  color: #000;
+  margin: 0;
+}
+
+.container-links .link p {
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.container-links div:nth-child(2) {
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid rgb(231, 231, 231);
+  color: var(--cyan);
+}
+
+.container-links div:last-child > p {
+  color: var(--cyan);
+  margin: 0;
+  overflow: hidden;
+}
+
+.container-links div button {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-color: var(--cyan);
+  padding: 10px;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container-links div button:hover {
+  background-color: #9be2e1;
+}
+
+/* ----------------------------------- Advanced Statistics ----------------------------------- */
 
 .statistics {
   background-color: #f0f1f6;
@@ -252,7 +358,7 @@ ul {
   margin: 0;
   border-radius: 50%;
   background-color: var(--dark-violet);
-  background-image: url("../images/icon-brand-recognition.svg");
+  background-image: url("https://daniel-cuervo.github.io/Shortly/images/icon-brand-recognition.svg");
   background-repeat: no-repeat;
   background-size: 40px;
   background-position: center;
@@ -262,16 +368,18 @@ ul {
 }
 
 .container-cards :nth-child(2) figure {
-  background-image: url("../images/icon-detailed-records.svg");
+  background-image: url("https://daniel-cuervo.github.io/Shortly/images/icon-detailed-records.svg");
 }
 
 .container-cards :nth-child(3) figure {
-  background-image: url("../images/icon-fully-customizable.svg");
+  background-image: url("https://daniel-cuervo.github.io/Shortly/images/icon-fully-customizable.svg");
 }
+
+/* ----------------------------------- Recommended ----------------------------------- */
 
 .recommended {
   width: 100%;
-  background-image: url("../images/bg-boost-mobile.svg");
+  background-image: url("https://daniel-cuervo.github.io/Shortly/images/bg-boost-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -294,10 +402,16 @@ ul {
   cursor: pointer;
 }
 
+.recommended button:hover {
+  background-color: #9be2e1;
+}
+
 .recommended button a {
   color: var(--white);
   font-weight: 700;
 }
+
+/* ----------------------------------- Footer ----------------------------------- */
 
 .footer {
   background-color: var(--very-dark-violet);
@@ -313,6 +427,10 @@ ul {
   color: var(--gray);
   font-size: 0.83em;
   line-height: 2;
+}
+
+.footer a:hover {
+  color: var(--cyan);
 }
 
 .footer .navigation {
@@ -348,7 +466,33 @@ ul {
   justify-content: center;
 }
 
-/* -------------------------- MEDIA QUERYS ---------------------------------- */
+.footer .social-media li a {
+  transition: all 0.5s ease;
+}
+
+.footer .social-media li:nth-child(4) a:hover {
+  color: #fd5892;
+  transition: all 0.5s ease;
+}
+
+.footer .social-media li:nth-child(3) a:hover {
+  color: #c62026;
+  transition: all 0.5s ease;
+}
+
+.footer .social-media li:nth-child(2) a:hover {
+  color: #00a7e7;
+  transition: all 0.5s ease;
+}
+
+.footer .social-media li:nth-child(1) a:hover {
+  color: #3a5795;
+  transition: all 0.5s ease;
+}
+
+/* ----------------------------------- Media Querys ----------------------------------- */
+
+/* ----------------------------------- Pantalla: 480px ----------------------------------- */
 
 @media screen and (min-width: 480px) {
   .wrapper {
@@ -372,6 +516,8 @@ ul {
     width: 90%;
   }
 }
+
+/* ----------------------------------- Pantalla: 760px ----------------------------------- */
 
 @media screen and (min-width: 760px) {
   body {
@@ -441,7 +587,13 @@ ul {
   .container-shorten-link form {
     margin-top: -27px;
   }
+
+  .container-shorten-link .message.error {
+    font-size: 0.73em;
+  }
 }
+
+/* ----------------------------------- Pantalla: 850px ----------------------------------- */
 
 @media screen and (min-width: 850px) {
   .body {
@@ -522,6 +674,12 @@ ul {
     margin: 0 10px;
     font-weight: 700;
     color: var(--grayish-violet);
+    transition: all 0.5s ease;
+  }
+
+  .header__menu .header__options a:hover {
+    color: #000;
+    transition: all 0.5s ease;
   }
 
   .header__menu .header__login {
@@ -545,6 +703,12 @@ ul {
     color: var(--grayish-violet);
     margin: 0 20px;
     font-weight: 700;
+    transition: all 0.5s ease;
+  }
+
+  .header__menu .header__login a:hover {
+    color: #000;
+    transition: all 0.5s ease;
   }
 
   .header__menu .header__login :nth-child(2) a {
@@ -574,11 +738,21 @@ ul {
     width: calc(100% - 155px);
   }
 
+  .container-shorten-link div {
+    width: 75%;
+    margin-right: 20px;
+  }
+
   .container-shorten-link input {
     margin-bottom: 0;
-    width: 75%;
-    margin-right: 15px;
+    width: 100%;
+    /* margin-right: 15px; */
   }
+
+  /* .container-shorten-link .message-error {
+    margin: 5px 0;
+    font-size: 1px;
+  } */
 
   .description {
     margin-top: 30px;
@@ -586,6 +760,7 @@ ul {
 
   .container-shorten-link button {
     width: 25%;
+    height: 42px;
   }
 
   .statistics {
@@ -605,7 +780,51 @@ ul {
   .recommended {
     background-image: url("../images/bg-boost-desktop.svg");
   }
+
+  .container-links .link {
+    display: flex;
+    /* height: 50px; */
+    justify-content: space-between;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .container-links .link div {
+    display: inherit;
+    padding: 0;
+  }
+
+  .container-links .link p {
+    display: flex;
+    align-items: center;
+  }
+
+  .container-links .link div:last-child {
+    width: initial;
+    margin-right: 20px;
+  }
+
+  .container-links .link div:last-child p {
+    overflow: initial;
+  }
+
+  .container-links .link button {
+    margin: 15px 0;
+    padding: 10px 20px;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .container-links .link div:first-child {
+    margin-left: 20px;
+  }
+
+  .container-shorten-link .message.error {
+    margin-bottom: 0;
+  }
 }
+
+/* ----------------------------------- Pantalla: 1024px ----------------------------------- */
 
 @media screen and (min-width: 1024px) {
   .wrapper {
@@ -662,7 +881,6 @@ ul {
 
   .statistics .statistics-description p {
     font-size: 17px;
-    font-weight: 700;
   }
 
   .footer {
@@ -698,6 +916,8 @@ ul {
     font-size: 20px;
   }
 }
+
+/* ----------------------------------- Pantalla: 1250px ----------------------------------- */
 
 @media screen and (min-width: 1250px) {
   .wrapper {
@@ -735,7 +955,17 @@ ul {
   .recommended {
     font-size: 27px;
   }
+
+  .container-links .link {
+    font-size: 18px;
+  }
+
+  .container-shorten-link .message.error {
+    font-size: 0.86em;
+  }
 }
+
+/* ----------------------------------- Pantalla: 1440px ----------------------------------- */
 
 @media screen and (min-width: 1440px) {
   .wrapper {
@@ -750,5 +980,23 @@ ul {
   .header__menu .header__options a,
   .header__menu .header__login a {
     margin: 0 22px;
+  }
+
+  .container-links {
+    margin-top: 50px;
+  }
+
+  .container-links .link {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 25px;
+  }
+
+  .container-links {
+    margin-top: 70px;
   }
 }
